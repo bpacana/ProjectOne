@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/cooking.jpg);
+    background-size: cover;
+}
+
+.maincon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainContainer {
+    width: 80%;
+    padding: 5px;
+    background: rgba(46, 0, 146, 0.82);
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.head {
+    margin-bottom: 50px;
+}
+
+.head h1 {
+    font-weight: bold;
+    font-size: 110px;
+    letter-spacing: -3px;
+}
+
+.head p {
+    color: #FFF;
+    font-style: italic; 
+}
+
+#mainContainer .form-group {
+    margin-top: 5rem;
+}
+
+button.btn {
+
+}
+
+#input-ingredient {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    height: 30px;
+    font-size: 1.5rem;
+}
+
+#enterIng {
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+}
+
+#addItem {
+    width: 30%;
+    color: black;
+    background-color: white;
+    border: none;
+    font-size: 1.5em;
+    border-radius: 50px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+#recipeSearch {
+    width: 30%;
+    color: black;
+    background-color: white;
+    border: none;
+    font-size: 1.5em;
+    border-radius: 50px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+#ingredientsList {
+    width: 80%;
+    margin: auto;
+    padding: 5%;
+    color: white;
+    font-size: 2em;
+}
+
+.eachResult {
+    display: flex;
+    text-align: initial;
+    margin: 3%;
+    padding: 1%;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.6);
+    color: black;
+    overflow: hidden;
+}
+
+.recipeImage {
+    width: 40%;
+    height: 30%;
+    border: 2px solid white;
+}
+
+.mealTitle {
+    margin-top: -8px;
+    margin-left: 2%;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.ingredients {
+    color: white;
+    font-size: 0.5em;
+}
+
+.viewRecipe {
+    width: 150px;
+    display: inline-block;
+    font-size: 0.2em;
+    color: black;
+    background-color: white;
+}
+
+:root {
+    --bg: #3C465C;
+    --primary: #78FFCD;
+    --solid: #fff;
+    --btn-w: 10em;
+    --dot-w: calc(var(--btn-w)*.2);
+    --tr-X: calc(var(--btn-w) - var(--dot-w));
+}
+* {box-sizing: border-box;}
+*:before, *:after {box-sizing: border-box;}
+
+body {
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+h1 {
+    color: var(--solid);
+    font-size: 2.5rem;
+    margin-top: 6rem;   
+}
+.btn {
+    position: relative;
+    margin: 0 auto;
+    width: var(--btn-w);
+    color: var(--primary);
+    border: .15em solid var(--primary);
+    border-radius: 5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 2em;
+    cursor: pointer;    
+}
+.dot {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: var(--dot-w);
+    height: 100%;
+    border-radius: 100%;
+    transition: all 300ms ease;
+    display: none;
+}
+.dot:after {
+    content: '';
+    position: absolute;
+    left: calc(50% - .4em);
+    top: -.4em;
+    height: .8em;
+    width: .8em;
+    background: var(--primary);
+    border-radius: 1em;
+    border: .25em solid var(--solid);
+    box-shadow: 0 0 .7em var(--solid),
+                0 0 2em var(--primary);
+}
+.btn:hover .dot,
+.btn:focus .dot {
+    animation: atom 2s infinite linear;
+    display: block;
+}
+@keyframes atom {
+    0% {transform: translateX(0) rotate(0);}
+    30%{transform: translateX(var(--tr-X)) rotate(0);}
+    50% {transform: translateX(var(--tr-X)) rotate(180deg);}
+    80% {transform: translateX(0) rotate(180deg);}
+    100% {transform: translateX(0) rotate(360deg);}
+
+}
+
+
+
+.addFavorite {
+    overflow: auto;
+    height: 10%;
+    font-size: 0.2em;
+    color: black;
+    background-color: white;
+}
+
+
+
+/* =============== MODAL ================ PLEASE DO NOT TOUCH */
+/* Modal Content/Box */
+.modal-content {
+    border-radius: 10px;
+    color: black;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 90%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#recipeHolder {
+    flex: none;
+    padding: 1%;
+    height: 650px;
+}
+
+#modalTitle {
+    height: 50px;
+    font-size: 2em;
+    margin-bottom: 5%;
+}
+
+#modalImage {
+    width: 40%;
+    border-radius: 10px;
+}
+
+#recipeDetails {
+    height: 260px;
+    width: 60%;
+    float: right;
+    /* margin-right: 5%; */
+}
+
+#infoList {
+    margin-top: 2%;
+}
+
+#recipeInstructions {
+    height: 50%;
+    margin-top: 3%;
+}
+
+
+#youTubeVids {
+    border: 1px solid black;
+    flex: none;
+    text-align: center;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.62);
+    padding: 10px 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.footer a {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.footer a span {
+    font-size: 20px;
+}
+
+@media all and (max-height: 640px) {
+    body {
+        height: initial;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .head h1 {
+        font-size: 60px;
+        margin-top: 30px;
+    }
+    #addItem, #recipeSearch {
+        font-size: 1em;
+    }
+    #enterIng {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 600px) {
+    body {
+        height: initial;
+    }
+    .head {
+        margin-bottom: 35px;
+    }
+    .head h1 {
+        font-size: 35px;
+        margin-top: 30px;
+    }
+    .head p {
+        font-size: 1.5rem;
+    }
+    #enterIng, #recipeSearch {
+        font-size: 1em;
+    }
+
+    #addItem, #recipeSearch {
+        font-size: .8em;
+        width: 40%;
+    }
+    .footer a span {
+        font-size: initial;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
